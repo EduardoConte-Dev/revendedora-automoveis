@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:17
+    container_name: postgres17
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: revendedora
+    ports:
+      - "5433:5432"  # Mapeia a porta padrão do PostgreSQL para o host
+    volumes:
+      - postgres_data:/var/lib/postgresql/data  # Persistência de dados
+
+volumes:
+  postgres_data:
